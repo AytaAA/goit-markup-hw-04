@@ -152,10 +152,6 @@ focus {
     height: 16px;
     width: 10px;
 }
-
-.upper-contacts .item::before:hover {
-    color: var(--hover-button-color);
-}
 .contacts {
     font-family: Roboto, sans-serif;
     font-style: normal;
@@ -174,12 +170,15 @@ focus {
 }
 .hero {
     background-color: var(--hero-background-color);
-    background-image: url("../images/hero-image.jpg");
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url("../images/hero-image.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    margin-right: auto;
+    margin-left: auto;
     align-items: center;
+    max-width: 1600px;
     height: 600px;
     padding-top: 200px;
     padding-bottom: 200px;
