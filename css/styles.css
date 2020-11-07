@@ -16,6 +16,7 @@ html {
     --hero-background-color: #2f303a;
     --secondary-section-background-color: #e5e5e5;
     --team-background-color: #f5f4fa;
+    --social-icons-color: #afb1b8;
 }
 a {
     text-decoration: none;
@@ -132,27 +133,28 @@ focus {
     margin-left: 50px;
 }
 
-.upper-contacts .item::before {
-    display: inline-block;
-    content: "";
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 10px;
-    color: var(--secondary-color);
+.upper-contacts-svg {
+    fill: var(--secondary-color);
 }
 
-.upper-contacts .item:nth-child(1)::before {
-    background-image: url("../images/envelope.svg");
-    height: 12px;
+.upper-contacts-item .upper-contacts-svg:hover {
+    fill: var(--hover-button-color);
+}
+.upper-contacts-svg-one {
     width: 16px;
+    height: 12px;
 }
 
-.upper-contacts .item:nth-child(2)::before {
-    background-image: url("../images/phone.svg");
-    height: 16px;
+.upper-contacts-svg-two {
     width: 10px;
+    height: 16px;
 }
-.contacts {
+
+.upper-contacts {
+    margin-right: 10px;
+}
+
+.upper-contacts-item {
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -161,8 +163,13 @@ focus {
     letter-spacing: 0.02em;
     color: var(--secondary-color);
 }
-.contacts:hover {
+.upper-contacts-item:hover {
     color: var(--hover-button-color);
+}
+
+.upper-contacts-svg {
+    fill: currentColor;
+    margin-right: 10px;
 }
 
 .border-bottom {
@@ -330,7 +337,7 @@ focus {
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    /**align-items: center;**/
+    align-items: center;
     text-align: center;
     width: 1200px;
     padding-left: 0;
@@ -358,7 +365,7 @@ focus {
 }
 .flex-item {
     width: 270px;
-    /**padding-bottom: 30px;**/
+    padding-bottom: 30px;
     background: var(--white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
@@ -390,13 +397,53 @@ focus {
     color: var(--secondary-color);
 }
 
+.list-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-left: 32px;
+    margin-top: 16px;
+    align-items: center;
+    padding-inline-start: 0;
+}
+
+.social-icons-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+.social-icons-link:hover .social-icons-svg,
+.social-icons-link:focus .social-icons-svg {
+    fill: var(--white);
+}
+
+.social-icons-link:hover,
+.social-icons-link:focus {
+    background-color: var(--hover-button-color);
+}
+.social-icons-svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--social-icons-color);
+}
+
+.social-icons-item:not(:last-child) {
+    margin-right: 10px;
+}
 .clients {
     padding-bottom: 94px;
-    padding-top: 94px;
+    padding-top: 20px;
+    padding-left: 215px;
+    padding-right: 215px;
 }
 .clients-header {
     margin: 0;
     margin-bottom: 50px;
+    margin-top: 74px;
     text-align: center;
     font-family: Roboto;
     font-style: normal;
@@ -408,16 +455,45 @@ focus {
     color: var(--main-text-color);
 }
 
-.social-networks {
+.constant-clients-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 0 auto;
-    margin-top: 16px;
-    margin-bottom: 30px;
     align-items: center;
     padding-inline-start: 0;
 }
+
+.constant-clients-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 90px;
+    border: 1px solid #afb1b8;
+    border-radius: 4px;
+    color: var(--social-icons-color);
+}
+.clients-examples-svg {
+    fill: var(--social-icons-color);
+}
+
+.constant-clients-list-item:hover .clients-examples-svg,
+.constant-clients-list-item:focus .clients-examples-svg {
+    fill: var(--hover-button-color);
+}
+
+.constant-clients-list-item:hover,
+.constant-clients-list-item:focus {
+    border-color: var(--hover-button-color);
+}
+
+.constant-clients-list-a:not(:last-child) {
+    margin-right: 30px;
+}
+
 .footer {
+    padding-top: 60px;
     display: flex;
     flex-wrap: wrap;
     align-items: left;
@@ -426,6 +502,10 @@ focus {
     background-color: var(--hero-background-color);
 }
 
+.footer-div-box {
+    display: flex;
+    flex-wrap: wrap;
+}
 .footerlogo {
     margin-bottom: 20px;
     font-family: Raleway, sans-serif;
@@ -446,8 +526,8 @@ focus {
     align-items: center;
     text-align: left;
     width: 231px;
-    /**margin-top: 20px;**/
-    margin-right: auto;
+    margin-top: 20px;
+    margin-right: 70px;
     margin-bottom: 0;
     margin-left: 0;
     padding-inline-start: 0px;
@@ -483,6 +563,55 @@ focus {
     color: var(--hover-button-color);
 }
 
+.join-us-header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding-top: 12px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.list-footer-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: center;
+    padding-inline-start: 0;
+}
+.footer-social-icons-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+.footer-social-icons-link:hover .footer-social-icons-svg,
+.footer-social-icons-link:focus .footer-social-icons-svg {
+    fill: var(--white);
+}
+
+.footer-social-icons-link:hover,
+.footer-social-icons-link:focus {
+    background-color: var(--hover-button-color);
+}
+.footer-social-icons-svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--white);
+}
+
+.footer-social-icons-item:not(:last-child) {
+    margin-right: 10px;
+}
 .ourprojects {
     display: flex;
     flex-wrap: wrap;
@@ -538,9 +667,11 @@ focus {
     width: 370px;
     margin-right: 30px;
     margin-bottom: 30px;
-    border: 1px solid #eeeeee;
 }
 
+.project-info-item:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .project-info-item:nth-child(3n) {
     margin-right: 0;
 }
@@ -551,6 +682,7 @@ focus {
 
 .project-info-box {
     padding: 20px 24px;
+    border: 1px solid #eeeeee;
 }
 .projecthead {
     margin-bottom: 4px;
@@ -567,10 +699,10 @@ focus {
 }
 
 .projectdesc {
-    /**margin-top: 0;
+    margin-top: 0;
     margin-bottom: 20;
     margin-left: 24px;
-    margin-right: auto;**/
+    margin-right: auto;
     text-align: left;
 
     font-family: Roboto, sans-serif;
