@@ -436,14 +436,11 @@ focus {
 }
 .clients {
     padding-bottom: 94px;
-    padding-top: 20px;
-    padding-left: 215px;
-    padding-right: 215px;
+    padding-top: 94px;
 }
 .clients-header {
     margin: 0;
     margin-bottom: 50px;
-    margin-top: 74px;
     text-align: center;
     font-family: Roboto;
     font-style: normal;
