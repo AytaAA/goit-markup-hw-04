@@ -518,18 +518,17 @@ focus {
     color: var(--white);
 }
 .footer-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: left;
-    width: 231px;
     margin-top: 20px;
-    margin-right: 70px;
     margin-bottom: 0;
     margin-left: 0;
-    padding-inline-start: 0px;
+    padding-left: 0px;
 }
 
+.footer-div-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
 .footer-list-item {
     margin-bottom: 9px;
 }
@@ -560,11 +559,17 @@ focus {
     color: var(--hover-button-color);
 }
 
+.footer-widget. {
+    width: 270px;
+}
+
+.footer-widget.join-us {
+    margin-left: 70px;
+}
 .join-us-header {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    padding-top: 12px;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
